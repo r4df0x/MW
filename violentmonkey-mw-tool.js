@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Load GoMining-Miner-Wars-Tool & Align Left
-// @version      1.0.1
+// @version      1.0.2
 // @downloadURL  https://raw.githubusercontent.com/r4df0x/MW/main/violentmonkey-mw-tool.js
 // @updateURL    https://raw.githubusercontent.com/r4df0x/MW/main/violentmonkey-mw-tool.js
 // @match        https://app.gomining.com/*
@@ -37,24 +37,33 @@
 })();
 
 (function () {
-  function patchAlign() {
-    const el = document.querySelector(
+  function patchAlign(root = document) {
+    const els = root.querySelectorAll?.(
       '.h-flex-full.align-items-center.justify-content-center.position-relative'
     );
 
-    if (!el) return false;
+    if (!els) return;
 
-    el.className =
-      'h-flex-full align-items-left ps-7 justify-content-center position-relative';
-
-    return true;
+    els.forEach(el => {
+      el.className =
+        'h-flex-full align-items-left ps-7 justify-content-center position-relative';
+    });
   }
 
-  if (!patchAlign()) {
-    const timer = setInterval(() => {
-      if (patchAlign()) clearInterval(timer);
-    }, 500);
+  patchAlign();
 
-    setTimeout(() => clearInterval(timer), 30000);
-  }
+  const observer = new MutationObserver(mutations => {
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        if (node.nodeType === 1) {
+          patchAlign(node);
+        }
+      }
+    }
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
 })();
