@@ -4,6 +4,24 @@ A lightweight Violentmonkey userscript that automatically loads the latest versi
 
 Instead of installing and updating the original script manually, this loader always fetches the newest available release and can update itself through Violentmonkey.
 
+## Installation
+
+1. Install Violentmonkey:
+
+   https://violentmonkey.github.io/
+
+2. Open Violentmonkey and create a new script by pressing **+**.
+
+3. Click **Install from URL**.
+
+4. Paste the following URL:
+
+   `[https://raw.githubusercontent.com/r4df0x/MW/main/loader.js](https://raw.githubusercontent.com/r4df0x/GoMining-MWT-Loader/main/loader.js)`
+
+5. Click **Install**.
+
+6. Future updates can be installed through Violentmonkey's update mechanism.
+
 ## Credits
 
 All credit for the Miner Wars Tool goes to **Jasper70**.
