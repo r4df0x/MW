@@ -1,4 +1,4 @@
-# GoMining MW Loader
+# GoMining MWT Loader
 
 A lightweight Violentmonkey userscript that automatically loads the latest version of Jasper70's GoMining Miner Wars Tool directly from GitHub.
 
