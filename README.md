@@ -10,7 +10,7 @@ Instead of installing and updating the original script manually, this loader alw
 
    https://violentmonkey.github.io/
 
-2. Open Violentmonkey and create a new script by pressing **+**.
+2. Open Violentmonkey settings and create a new script by pressing **+**.
 
 3. Click **Install from URL**.
 
