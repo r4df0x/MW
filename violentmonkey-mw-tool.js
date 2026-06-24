@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Load GoMining-Miner-Wars-Tool & Align Left
-// @match        https://app.gomining.com/miner-wars/*
+// @match        https://app.gomining.com/*
 // @run-at       document-idle
 // @grant        none
 // @inject-into  page
